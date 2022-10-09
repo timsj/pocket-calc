@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Gemunu+Libre:300");
+@import "dark.css" (prefers-color-scheme: dark);
+@import "light.css" (prefers-color-scheme: light);
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: "Gemunu Libre", sans-serif;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 1rem 0 0;
+}
+
+a {
+  margin: 1rem 0 0;
+  text-decoration: none;
+  transition: 0.2s ease-in-out all;
+}
+
+button {
+  touch-action: manipulation;
+  /* prevents double tap to zoom on mobile */
+}
+
+.container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+}
+
+.title {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calc {
+  border: 3px solid #6b7280;
+  border-radius: 20px;
+  min-width: 350px;
+  width: 90vw;
+  max-width: 450px;
+}
+
+.display {
+  width: 100%;
+  font-family: "Gemunu Libre", sans-serif;
+  font-size: 3.5rem;
+  /* max font size so 10 digits of widest char (8) can fit on display */
+  height: 80px;
+  border-radius: 20px;
+  text-align: right;
+  padding: 0 20px 0 10px;
+}
+
+.calc-keys {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* minmax(0, 1fr) prevents grid blowout */
+  /* by setting min grid column width to 0 */
+  gap: 5px;
+  padding: 10px;
+  padding-top: 5px;
+}
+
+.calc-keys > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  border-radius: 3px;
+  font-family: "Gemunu Libre", sans-serif;
+  font-size: 2rem;
+  transition: 0.2s ease-in-out all;
+}
+
+button.zero {
+  grid-column-start: span 2;
+}
+
+@media (min-width: 450px) {
+  .display {
+    font-size: 4rem;
+  }
+  .calc-keys {
+    gap: 10px;
+    padding: 15px;
+    padding-top: 10px;
+  }
+}
