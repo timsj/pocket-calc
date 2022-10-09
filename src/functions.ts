@@ -102,7 +102,7 @@ export const handleOperator = (nextOperator: string): void => {
 export const handleFunc = (funcType: string): void => {
   const { displayValue, needsSecondValue } = calculator;
   const inputValue = parseFloat(displayValue);
-  console.log(inputValue);
+  // console.log(inputValue);
 
   // initialize result variable
   let result: number = 0;
