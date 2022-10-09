@@ -29,7 +29,7 @@ export const clearAll = (): void => {
   calculator.firstValue = null;
   calculator.operator = null;
   calculator.needsSecondValue = false;
-  console.log(calculator);
+  // console.log(calculator);
 };
 
 export const inputDigit = (digit: string): void => {
@@ -46,7 +46,7 @@ export const inputDigit = (digit: string): void => {
     calculator.displayValue =
       displayValue.length < 10 ? displayValue + digit : displayValue;
   }
-  console.log(calculator);
+  // console.log(calculator);
 };
 
 export const inputDecimal = (point: string): void => {
@@ -74,7 +74,7 @@ export const handleOperator = (nextOperator: string): void => {
   // handles changed operation type
   if (operator && needsSecondValue) {
     calculator.operator = nextOperator;
-    console.log(calculator);
+    // console.log(calculator);
     return;
   }
 
@@ -96,7 +96,7 @@ export const handleOperator = (nextOperator: string): void => {
   // sets up calculator to calculate on next operator press
   calculator.needsSecondValue = true;
   calculator.operator = nextOperator;
-  console.log(calculator);
+  // console.log(calculator);
 };
 
 export const handleFunc = (funcType: string): void => {
@@ -125,7 +125,7 @@ export const handleFunc = (funcType: string): void => {
   if (needsSecondValue) {
     calculator.needsSecondValue = false;
   }
-  console.log(calculator);
+  // console.log(calculator);
 };
 
 const calculate = (
@@ -169,7 +169,7 @@ const roundForDisplay = (result: number): string => {
   // converts result to exp notation
   const resultsExp = result.toExponential(6).replace("+", "");
 
-  console.log(resultLength, resultLeftOfDec, resultString.length);
+  // console.log(resultLength, resultLeftOfDec, resultString.length);
 
   // conditional logic to determine displayValue
   if (resultLength < 11) {
